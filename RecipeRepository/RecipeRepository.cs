@@ -28,14 +28,15 @@ namespace RecipeRepository
             await _recipeContext.SaveChangesAsync();
         }
 
-        public Task<<Recipe>> GetAll()
+        public List<Recipe> GetAll()
         {
             return _recipeContext.Recipes.ToList();
         }
 
-        public Task Update(Recipe item)
+        public async Task Update(Recipe item)
         {
-            throw new NotImplementedException();
+            _recipeContext.Recipes.Update(item);
+            await _recipeContext.SaveChangesAsync();
         }
     }
 }

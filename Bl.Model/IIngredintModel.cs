@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,14 @@ using System.Threading.Tasks;
 
 namespace Bl.Model
 {
-    internal interface IIngredintModel
+    public interface IIngredintModel<T> 
     {
+        public T Create(string name, double price, int quantity);
+
+        public T FindByName(string name);
+
+        public Task UpdatePrice(T entity, double price);
+
+        public Task UpdateQuantity(T entity, int quantity);
     }
 }

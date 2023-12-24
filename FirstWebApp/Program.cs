@@ -1,8 +1,17 @@
+using DbRecipeContext;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+
+
+builder.Services.AddDbContext<RecipeContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres"));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

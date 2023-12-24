@@ -9,9 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{80ABFE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{355F1E49-087C-41AD-9A25-E85CFAB22785}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{742A9522-6577-4942-9D5C-7F745297E52B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{742A9522-6577-4942-9D5C-7F745297E52B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbRecipeContext", "DbRecipeContext\DbRecipeContext.csproj", "{ABA84650-8016-4ED1-8FDD-46FEDB53F0A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbRecipeContext", "DbRecipeContext\DbRecipeContext.csproj", "{ABA84650-8016-4ED1-8FDD-46FEDB53F0A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{ED5DE075-CCEA-42F7-BA6D-2E5C683C87B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeRepository", "RecipeRepository\RecipeRepository.csproj", "{82269632-AE13-4927-8D40-42F665BB97E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BL.Models", "BL.Models", "{C595E258-CF75-4C18-B3B1-A449B555410A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bl.Model", "Bl.Model\Bl.Model.csproj", "{18D69819-5BCA-4439-BA7D-7B62509EE067}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bl.Builder.1l", "Bl.Builder.1l", "{482312AD-BE61-4990-A184-2F75B13E61EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +41,14 @@ Global
 		{ABA84650-8016-4ED1-8FDD-46FEDB53F0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABA84650-8016-4ED1-8FDD-46FEDB53F0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABA84650-8016-4ED1-8FDD-46FEDB53F0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82269632-AE13-4927-8D40-42F665BB97E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82269632-AE13-4927-8D40-42F665BB97E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82269632-AE13-4927-8D40-42F665BB97E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82269632-AE13-4927-8D40-42F665BB97E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D69819-5BCA-4439-BA7D-7B62509EE067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D69819-5BCA-4439-BA7D-7B62509EE067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D69819-5BCA-4439-BA7D-7B62509EE067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D69819-5BCA-4439-BA7D-7B62509EE067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +56,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{742A9522-6577-4942-9D5C-7F745297E52B} = {80ABFE05-54FC-4F1F-8796-29E4132E7BF2}
 		{ABA84650-8016-4ED1-8FDD-46FEDB53F0A2} = {355F1E49-087C-41AD-9A25-E85CFAB22785}
+		{82269632-AE13-4927-8D40-42F665BB97E1} = {ED5DE075-CCEA-42F7-BA6D-2E5C683C87B8}
+		{18D69819-5BCA-4439-BA7D-7B62509EE067} = {C595E258-CF75-4C18-B3B1-A449B555410A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {169DD234-07BD-4CEC-8484-B2DE53FB2F66}

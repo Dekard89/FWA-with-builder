@@ -14,9 +14,9 @@ namespace Domain
 
         public bool IsActive { get; set; }
 
-        public string? Description { get; set; }
+        public Category Category { get; set; }
 
-        public TimeSpan TimeToCook { get; set; }
+        public string Image {  get; set; }
 
         public ICollection<Ingredient> Ingredients { get; set; }= new List <Ingredient>();
 

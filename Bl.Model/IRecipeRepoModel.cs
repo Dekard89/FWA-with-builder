@@ -9,6 +9,16 @@ namespace Bl.Model
 {
     public interface IRecipeRepoModel
     {
-        public Recipe
+        public  Recipe Create(string name, string image);
+
+        public  Recipe FindByName(string name);
+
+        public Task UpdateName(Recipe recipe, string name);
+
+        public Task UpdateImage(Recipe recipe, string image);
+
+       
+
+        
     }
 }

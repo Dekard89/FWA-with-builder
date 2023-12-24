@@ -14,6 +14,6 @@ namespace RecipeRepository
 
         public Task Delete(T item);
 
-        public Task<IEnumerable<T>> GetAll();
+        public List<T> GetAll();
     }
 }
