@@ -10,6 +10,7 @@ namespace Bl.Model
     public interface IIngredintModel<T> 
     {
         public T Create(string name, double price, int quantity);
+        public Task CreateAndAdd(string name, double price, int quantity);
 
         public T FindByName(string name);
 
