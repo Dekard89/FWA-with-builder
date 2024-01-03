@@ -1,5 +1,9 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    background-image: url("img\fon.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+   
 }
 
 @media (min-width: 768px) {

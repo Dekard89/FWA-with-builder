@@ -1,11 +1,14 @@
+using Bl.Model;
 using DbRecipeContext;
+using Domain;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddScoped<IRecipeService, RecipeService>();
+builder.Services.AddScoped<IIngredientService<Ingredient>, IngredientServiceTroughtRecipe>();
 
 
 builder.Services.AddDbContext<RecipeContext>(options =>

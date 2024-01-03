@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model FirstWebApp.Pages.RecipePagesModel
 @{
     ViewData["Title"] = "Recipe";
@@ -6,14 +6,17 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<h2>Добавление нового рецепта</h2>
+<h1>Добавление нового рецепта</h1>
 
-<div>
+
     <p> Введите название рецепта</p>
-    <form method="post">
-        <input type="text"name="name" />
-        <input type="text"name="img" />
-        <input type="submit" value="отправить" />
-    </form>
+    <div class="div>
+   
     
-</div>
+    <div class="row">
+           <a asp-page="/AddIngredient" class="btn btn-link" asp asp-route-rName=@Model.createdRecipe.Name>Добавить ингредиенты</a>
+        <a asp-page="/AddIngredient" class="btn btn-link" asp asp-route-rName=@Model.createdRecipe.Name>Добавить топинги</a>
+    </div>
+  
+    
+    

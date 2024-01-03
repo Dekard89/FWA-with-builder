@@ -13,11 +13,13 @@ namespace FirstWebApp.Pages
         
         private readonly IRecipeService _recipeService;
 
-        private readonly IngredientServiceTroughtRecipe ingredientServicr;
+        private readonly IngredientServiceTroughtRecipe ingredientService;
+
+        public int Counter { get; set; } = 1;
     
-        public IActionResult OnGet(string name)
+        public IActionResult OnGet(string rName)
         {
-            recipe = _recipeService.FindByName(name);
+            recipe = _recipeService.FindByName(rName);
             if (recipe == null)
              return RedirectToPage("/Error");
 
