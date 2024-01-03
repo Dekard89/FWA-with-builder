@@ -11,18 +11,18 @@ namespace BL.BuiderForDish
 {
     public class DishBuilder : IDishBuider
     {
-        private readonly IRecipeRepoModel _repoModel;
+        private readonly IRecipeService _repoModel;
 
         private readonly Dish _dish;
 
-        
 
-        public DishBuilder(IRecipeRepoModel repoModel)
+
+        public DishBuilder(IRecipeService repoModel)
         {
             _repoModel = repoModel;
 
             _dish = new Dish();
-            
+
         }
 
         private Recipe GetRecipe()
@@ -32,35 +32,42 @@ namespace BL.BuiderForDish
 
         public IDishBuider AppendFirstToping()
         {
-            throw new NotImplementedException();
+            _dish.AppendName($"/n c добавлением {GetRecipe().Topings.ToArray()[0].Name}");
+
+            _dish.AppendPrice(GetRecipe().Topings.ToArray()[0].Price);
+
+            return this;
         }
 
         public IDishBuider AppenSecondToping()
         {
-            _dish.AppendName($"/n c добавлением {GetRecipe().Topings[1.Name}");
 
-            _dish.AppendPrice(GetRecipe().Topings[1].Price);
+            _dish.AppendName($"/n c добавлением {GetRecipe().Topings.ToArray()[1].Name}");
+
+            _dish.AppendPrice(GetRecipe().Topings.ToArray()[1].Price);
+
+            return this;
         }
 
 
         public IDishBuider BuidOther()
         {
-            _dish.Category=GetRecipe().Category;
+            _dish.Category = GetRecipe().Category;
 
-            _dish.Image=GetRecipe().Image;
+            _dish.Image = GetRecipe().Image;
 
             return this;
         }
 
         public IDishBuider BuidPrice()
         {
-            _dish.Price=GetRecipe().Ingredients.Sum(x => x.Price);
+            _dish.Price = GetRecipe().Ingredients.Sum(x => x.Price);
 
             return this;
         }
 
-        public Dish GetDish()
-        {
-            throw new NotImplementedException();
-        }
+        public Dish GetDish()=> _dish;
+        
+       
     }
+}
