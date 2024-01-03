@@ -1,6 +1,5 @@
 ﻿using DbRecipeContext;
 using Domain;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +30,7 @@ namespace RecipeRepository
 
         public List<Ingredient> GetAll()
         {
-            return _recipeContext.Ingredients.Include(r=>r.Recipes).ToList();
+            return _recipeContext.Ingredients.ToList();
         }
 
         public async Task Update(Ingredient item)

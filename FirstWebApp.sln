@@ -19,26 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeRepository", "RecipeR
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BL.Models", "BL.Models", "{C595E258-CF75-4C18-B3B1-A449B555410A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bl.Model", "Bl.Model\Bl.Model.csproj", "{18D69819-5BCA-4439-BA7D-7B62509EE067}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bl.Model", "Bl.Model\Bl.Model.csproj", "{18D69819-5BCA-4439-BA7D-7B62509EE067}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bl.Builder.1l", "Bl.Builder.1l", "{482312AD-BE61-4990-A184-2F75B13E61EF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL.BuiderForDish", "DishBuilder\BL.BuiderForDish.csproj", "{1BDF8907-42E1-424A-B6D7-3682897524B4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{CED1D9AD-47DA-4F2A-A1C9-B2B5AF97775B}"
-	ProjectSection(SolutionItems) = preProject
-		img\drink1.webp = img\drink1.webp
-		img\drink2.webp = img\drink2.webp
-		img\drink3.webp = img\drink3.webp
-		img\fon pasta.jpg = img\fon pasta.jpg
-		img\fon.jpg = img\fon.jpg
-		img\pasta1.jpg = img\pasta1.jpg
-		img\pasta2.jpg = img\pasta2.jpg
-		img\pasta3.jpg = img\pasta3.jpg
-		img\salad1.jpg = img\salad1.jpg
-		img\salad2.jpg = img\salad2.jpg
-		img\salad3.webp = img\salad3.webp
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,10 +49,6 @@ Global
 		{18D69819-5BCA-4439-BA7D-7B62509EE067}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18D69819-5BCA-4439-BA7D-7B62509EE067}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18D69819-5BCA-4439-BA7D-7B62509EE067}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1BDF8907-42E1-424A-B6D7-3682897524B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BDF8907-42E1-424A-B6D7-3682897524B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BDF8907-42E1-424A-B6D7-3682897524B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BDF8907-42E1-424A-B6D7-3682897524B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,7 +58,6 @@ Global
 		{ABA84650-8016-4ED1-8FDD-46FEDB53F0A2} = {355F1E49-087C-41AD-9A25-E85CFAB22785}
 		{82269632-AE13-4927-8D40-42F665BB97E1} = {ED5DE075-CCEA-42F7-BA6D-2E5C683C87B8}
 		{18D69819-5BCA-4439-BA7D-7B62509EE067} = {C595E258-CF75-4C18-B3B1-A449B555410A}
-		{1BDF8907-42E1-424A-B6D7-3682897524B4} = {482312AD-BE61-4990-A184-2F75B13E61EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {169DD234-07BD-4CEC-8484-B2DE53FB2F66}
