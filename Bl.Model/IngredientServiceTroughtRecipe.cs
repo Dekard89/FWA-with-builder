@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Bl.Model
 {
-    public class IngredientRepoModelTroughtRecipe : IIngredientService<Ingredient>
+    public class IngredientServiceTroughtRecipe : IIngredientService<Ingredient>
     {
         private readonly IRepository<Recipe> recipeRepository;
 
         private readonly Recipe _recipe;
 
-        public IngredientRepoModelTroughtRecipe(IRepository<Recipe> repository,Recipe recipe) 
+        public IngredientServiceTroughtRecipe(IRepository<Recipe> repository,Recipe recipe) 
         {
              recipeRepository= repository;
             _recipe = recipe;

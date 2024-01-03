@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Bl.Model
 {
-    public class TopingRepoModel:IIngredientService<Toping>
+    public class TopingService:IIngredientService<Toping>
     {
         private readonly IRepository<Recipe> recipeRepository;
 
         private readonly Recipe _recipe;
 
-        public TopingRepoModel(IRepository<Recipe> recipeRepoModel, Recipe recipe)
+        public TopingService(IRepository<Recipe> recipeRepoModel, Recipe recipe)
         {
             recipeRepository = recipeRepoModel;
 

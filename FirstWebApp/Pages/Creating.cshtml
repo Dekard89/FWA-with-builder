@@ -9,10 +9,16 @@
 <h1>Добавление нового рецепта</h1>
 
 
-    <p> Введите название рецепта</p>
-    <div class="div>
+    <h2>Введите рецепт</h2>
+    <div class="row">
+    <form method="post">
+        <input asp-for="inputRecipe.name" value="Введите название"/>
+        <input asp-for="inputRecipe.img"  value="Добавьте фото"/>
+        <button type="submit" class="btn-success" asp-route-rName="@Model.inputRecipe.name">Добавить</button>
+    </form>
+    </div>
    
-    
+    <h2>Далее небходимо добавить ингредиены</h2>
     <div class="row">
            <a asp-page="/AddIngredient" class="btn btn-link" asp asp-route-rName=@Model.createdRecipe.Name>Добавить ингредиенты</a>
         <a asp-page="/AddIngredient" class="btn btn-link" asp asp-route-rName=@Model.createdRecipe.Name>Добавить топинги</a>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bl.Model
 {
-    public interface IRecipeRepoModel
+    public interface IRecipeService
     {
         public  Recipe Create(string name, string image);
 

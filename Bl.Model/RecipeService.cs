@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Bl.Model
 {
-    public class RecipeRepoModel : IRecipeService
+    public class RecipeService : IRecipeService
     {
         private readonly IRepository<Recipe> _recipeRepository;
 
-        public RecipeRepoModel(IRepository<Recipe> repository)
+        public RecipeService(IRepository<Recipe> repository)
         {
             _recipeRepository= repository;
         }
@@ -23,7 +23,9 @@ namespace Bl.Model
         }
         public Recipe Create(string name, string image)
         {
-            return new Recipe { Name = name, Image=image};
+            var recipe= new Recipe { Name = name, Image=image};
+            _recipeRepository.Add(new Recipe { Name = name, });
+            return recipe;
         }
 
         public Recipe FindByName(string name)
