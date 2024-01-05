@@ -1,5 +1,17 @@
-﻿@page "{rName}"
+﻿@page "{rName}/{Counter}"
 @model FirstWebApp.Pages.AddIngredientModel
 @{
     ViewData["Title"]="Ingredient";
 }
+<h1>Добавление ингредиентов для рецепта @Model.recipe.Name</h1>
+<div class="row">
+    <h2>Ингредиент номер @Model.Counter</h2>
+    <div class="row">
+        <form method="post">
+            <input asp-for=inputIngredient.name value="Введите название" />
+            <input asp-for=inputIngredient.price value="Введите цену" />
+            <button type="submit" class="btn-lg" >Добавить</button>
+            <a asp-page="/Creating" class="btn btn-close"> Завершить</a>
+        </form>
+    </div>
+</div>

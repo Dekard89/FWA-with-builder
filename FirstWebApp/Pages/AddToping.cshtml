@@ -1,13 +1,23 @@
-﻿@page "{rName}"
-@model First
+﻿@page "{rName}/{Counter}"
+@model FirstWebApp.Pages.AddTopingModel
 @{
     ViewData["Title"] = "Toping";
-    @(int counter = 0; )
+    
 }
 
 <h1>Добавление топингов</h1>
 
 <div class="row">
-    <h2>Топинг номер @M</h2>
+    <h2>Топинг номер @Model.Counter</h2>
+    <div class="row">
+        <form method="post">
+            <div class="row">
+                <input asp-for=inputTopuing.name value="Введите название" />
+            </div>
+            <div class="row">
+                <input asp-for=inputTopuing.price value="Введите ценц" />
+            </div>
+        </form>
+    </div>
 </div>
 

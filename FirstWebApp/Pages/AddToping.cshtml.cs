@@ -33,7 +33,13 @@ namespace FirstWebApp.Pages
         }
         public IActionResult OnPost()
         {
+            Counter++;
+            _topingService.CreateAndAdd(inputTopuing.name, Convert.ToDouble(inputTopuing.price),1);
 
+            if (Counter >= 2)
+                return RedirectToPage("/Creating");
+
+            return this.Page();
         }
         
     }

@@ -12,12 +12,12 @@ namespace Bl.Model
     {
         private readonly IRepository<Recipe> recipeRepository;
 
-        private readonly Recipe _recipe;
+         public Recipe recipe {  get; set; }= new Recipe();
 
         public IngredientServiceTroughtRecipe(IRepository<Recipe> repository,Recipe recipe) 
         {
              recipeRepository= repository;
-            _recipe = recipe;
+            
         }
         public Ingredient Create(string name, double price, int quantity)
         {
@@ -26,25 +26,25 @@ namespace Bl.Model
 
         public async Task CreateAndAdd(string name, double price, int quantity)
         {
-            _recipe.Ingredients.Add(Create(name, price, quantity));
-            await recipeRepository.Update(_recipe);
+            recipe.Ingredients.Add(Create(name, price, quantity));
+            await recipeRepository.Update(recipe);
         }
 
         public Ingredient FindByName(string name)
         {
-            return _recipe.Ingredients.FirstOrDefault(x => x.Name == name);
+            return recipe.Ingredients.FirstOrDefault(x => x.Name == name);
         }
 
         public async Task UpdatePrice(Ingredient entity, double price)
         {
             entity.Price = price;
-            await recipeRepository.Update(_recipe);
+            await recipeRepository.Update(recipe);
         }
 
         public async Task UpdateQuantity(Ingredient entity, int quantity)
         {
             entity.Quantity = quantity;
-            await recipeRepository.Update(_recipe);
+            await recipeRepository.Update(recipe);
         }
     }
 }

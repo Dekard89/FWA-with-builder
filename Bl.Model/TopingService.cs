@@ -12,49 +12,49 @@ namespace Bl.Model
     {
         private readonly IRepository<Recipe> recipeRepository;
 
-        private readonly Recipe _recipe;
+        public  Recipe recipe { get; set; }=new Recipe();
 
         public TopingService(IRepository<Recipe> recipeRepoModel, Recipe recipe)
         {
             recipeRepository = recipeRepoModel;
 
-            _recipe = recipe;
+            this.recipe = recipe;
         }
 
         public async Task CreateAndAdd(string name, double price, int quantity)
         {
             
-            _recipe.Topings.Add(Create(name,price,quantity));
-            await recipeRepository.Update(_recipe);
+            recipe.Topings.Add(Create(name,price,quantity));
+            await recipeRepository.Update(recipe);
             
         }
 
         public Toping FindByName(string name)
         {
-            return _recipe.Topings.FirstOrDefault(x => x.Name == name);
+            return recipe.Topings.FirstOrDefault(x => x.Name == name);
         }
 
         public async Task UpdatePrice(Toping toping, double price)
         {
             toping.Price = price;
-            await recipeRepository.Update(_recipe);
+            await recipeRepository.Update(recipe);
         }
 
         public async Task UpdateQuantity(Toping toping, int quantity)
         {
             toping.Quantiyy = quantity;
-            await recipeRepository.Update(_recipe);
+            await recipeRepository.Update(recipe);
         }
         public async Task Add(Toping toping)
         {
-            _recipe.Topings.Add(toping);
-            await recipeRepository.Update(_recipe);
+            recipe.Topings.Add(toping);
+            await recipeRepository.Update(recipe);
 
         }
         public async Task Delete(Toping toping)
         {
-            _recipe.Topings.Remove(toping);
-            await recipeRepository.Update(_recipe);
+            recipe.Topings.Remove(toping);
+            await recipeRepository.Update(recipe);
         }
 
         public Toping Create(string name, double price, int quantity)
