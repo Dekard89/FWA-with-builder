@@ -17,8 +17,8 @@ namespace Bl.Model
 
         public Task UpdateImage(Recipe recipe, string image);
 
-       
-
+        
+        public List<Recipe> GetActive();
         
     }
 }

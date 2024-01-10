@@ -1,0 +1,21 @@
+﻿@page
+@model FirstWebApp.Pages.ViewingModel
+@{
+    ViewData["Title"] = "Viewing";
+}
+<h1>Просмотр всего меню</h1>
+<div class="row">
+    @foreach(var item in Model.Recipes)
+    {
+        var imagePath = $"/images/{item.Image}";
+
+        <div class="col-12 col-lg-4">
+            <div class="card-deck">
+                <div class="card m-3">
+
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

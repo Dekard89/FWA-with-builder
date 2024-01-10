@@ -17,7 +17,7 @@ namespace Bl.Model
             _recipeRepository= repository;
         }
 
-        private List<Recipe> GetActive()
+        public List<Recipe> GetActive()
         {
             return _recipeRepository.GetAll().Where(x => x.IsActive==true).ToList();
         }
