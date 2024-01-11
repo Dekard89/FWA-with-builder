@@ -14,6 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Composition.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Devart.Data.PostgreSql" Version="8.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -25,6 +30,18 @@
   <ItemGroup>
     <ProjectReference Include="..\Bl.Model\Bl.Model.csproj" />
     <ProjectReference Include="..\DbRecipeContext\DbRecipeContext.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Composition.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Composition.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Composition.cshtml" />
   </ItemGroup>
 
 </Project>

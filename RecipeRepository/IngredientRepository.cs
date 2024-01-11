@@ -1,10 +1,5 @@
 ﻿using DbRecipeContext;
 using Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RecipeRepository
 {
@@ -14,7 +9,7 @@ namespace RecipeRepository
 
         public IngredientRepository(RecipeContext recipeContext)
         {
-                _recipeContext = recipeContext;
+            _recipeContext = recipeContext;
         }
         public async Task Add(Ingredient item)
         {

@@ -12,7 +12,7 @@ namespace FirstWebApp.Pages
         public Recipe recipe { get; set; }
 
         public Ingredient Ingredient { get; set; }
-        
+
         private readonly IRecipeService _recipeService;
 
         private readonly IngredientServiceTroughtRecipe _ingredientService;
@@ -24,14 +24,14 @@ namespace FirstWebApp.Pages
         }
 
         public int Counter { get; set; } = 1;
-    
+
         public IActionResult OnGet(string rName)
         {
             recipe = _recipeService.FindByName(rName);
 
             _ingredientService.recipe = recipe;
             if (recipe == null)
-             return RedirectToPage("/Error");
+                return RedirectToPage("/Error");
 
             return Page();
         }
@@ -39,7 +39,7 @@ namespace FirstWebApp.Pages
         {
             Counter++;
             _ingredientService.CreateAndAdd(inputIngredient.name, Convert.ToDouble(inputIngredient.price), 1);
-            
+
             return this.Page();
         }
         public record InputIngredient(string name, string price);

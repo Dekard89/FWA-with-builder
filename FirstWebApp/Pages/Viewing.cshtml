@@ -12,7 +12,18 @@
         <div class="col-12 col-lg-4">
             <div class="card-deck">
                 <div class="card m-3">
-
+                    <div class="card-header text-center">
+                        <h3>@item.Name</h3>
+                    </div>
+                    <div class="text-center">
+                        <img class="card-img-top ImageCardStile" src="@imagePath" asp-append-version=true />
+                    </div>
+                     <div class="card-footer text-center">
+                         @Model.inputName.name=item.Name;
+                         <button as class="btn-danger" >Удалить</button>
+                         <a>Состав</a>
+                         <a>Изменить</a>
+                     </div>
                 </div>
             </div>
         </div>

@@ -1,11 +1,6 @@
 ﻿using DbRecipeContext;
 using Domain;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RecipeRepository
 {
@@ -15,7 +10,7 @@ namespace RecipeRepository
 
         public RecipeRepository(RecipeContext recipeContext)
         {
-               _recipeContext = recipeContext;
+            _recipeContext = recipeContext;
         }
         public async Task Add(Recipe item)
         {
@@ -25,14 +20,14 @@ namespace RecipeRepository
 
         public async Task Delete(Recipe item)
         {
-             _recipeContext.Recipes.Remove(item);
+            _recipeContext.Recipes.Remove(item);
             await _recipeContext.SaveChangesAsync();
         }
 
         public List<Recipe> GetAll()
         {
-            return _recipeContext.Recipes.Include(i=>i.Ingredients)
-                .Include(t=>t.Topings).ToList();
+            return _recipeContext.Recipes.Include(i => i.Ingredients)
+                .Include(t => t.Topings).ToList();
         }
 
         public async Task Update(Recipe item)

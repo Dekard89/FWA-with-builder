@@ -1,10 +1,5 @@
 ﻿using Domain;
 using RecipeRepository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bl.Model
 {
@@ -12,17 +7,17 @@ namespace Bl.Model
     {
         private readonly IRepository<Recipe> recipeRepository;
 
-         public Recipe recipe {  get; set; }= new Recipe();
+        public Recipe recipe { get; set; } = new Recipe();
 
-        public IngredientServiceTroughtRecipe(IRepository<Recipe> repository,Recipe recipe) 
+        public IngredientServiceTroughtRecipe(IRepository<Recipe> repository)
         {
-             recipeRepository= repository;
-            
+            recipeRepository = repository;
+
         }
         public Ingredient Create(string name, double price, int quantity)
         {
-            return new Ingredient { Name= name, Price = price, Quantity = quantity };
-        }   
+            return new Ingredient { Name = name, Price = price, Quantity = quantity };
+        }
 
         public async Task CreateAndAdd(string name, double price, int quantity)
         {

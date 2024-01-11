@@ -1,13 +1,6 @@
-﻿using Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bl.Model
+﻿namespace Bl.Model
 {
-    public interface IIngredientService<T> 
+    public interface IIngredientService<T>
     {
         public T Create(string name, double price, int quantity);
         public Task CreateAndAdd(string name, double price, int quantity);

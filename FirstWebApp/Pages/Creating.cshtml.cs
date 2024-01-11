@@ -2,7 +2,6 @@ using Bl.Model;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Identity.Client;
 
 namespace FirstWebApp.Pages
 {
@@ -10,7 +9,7 @@ namespace FirstWebApp.Pages
     {
         private readonly IRecipeService _recipeService;
 
-        public Recipe createdRecipe { get; set; }=new Recipe();
+        public Recipe createdRecipe { get; set; } = new Recipe();
 
         public RecipePagesModel(IRecipeService recipeService)
         {
@@ -21,19 +20,59 @@ namespace FirstWebApp.Pages
         [BindProperty]
         public InputRecipe inputRecipe { get; set; }
 
-        
-        public void OnGet()
+
+        public IActionResult OnGet()
         {
+            return Page();
         }
-       
+
         public void OnPost()
         {
-            createdRecipe= _recipeService.Create(inputRecipe.name,inputRecipe.img);
+            createdRecipe = _recipeService.Create(inputRecipe.name, inputRecipe.img);
 
         }
 
-        public record InputRecipe(string name, string img);
-        
-    }
+        public class InputRecipe
+        {
+            public string name { get; set; } = "";
 
+            public string img
+            {
+                get => img;
+
+                set => img = GetFilePath();
+            }
+
+
+
+            public IFormFile File { get; set; }
+
+            private readonly IWebHostEnvironment _webHostEnvironment;
+
+            public InputRecipe(IWebHostEnvironment webHost)
+            {
+                _webHostEnvironment = webHost;
+            }
+            private string GetFilePath()
+            {
+                string uniqueFileName = null;
+
+                if (File != null)
+                {
+                    string uploadFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + File.FileName;
+
+                    string filePath = Path.Combine(uploadFolder, uniqueFileName);
+
+                    using (var fs = new FileStream(filePath, FileMode.Create))
+                    {
+                        File.CopyTo(fs);
+                    }
+                }
+                return uniqueFileName;
+            }
+        }
+
+    }
 }
